@@ -1,4 +1,4 @@
-*.font: xft:JetBrains Mono:size=10
+*.font: xft:JetBrains Mono:size=11
 
 Xft.dpi:                        96
 Xft.antialias:                  1
@@ -23,8 +23,6 @@ URxvt.url-launcher:             firefox
 URxvt.matcher.button: 		1
 URxvt.transparent: true
 URxvt.shading: 27
-URxvt.foreground: #F69F99
+URxvt.foreground: #e5e9f0
 URxvt.keysym.Shift-Control-V:	eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: 	eval:selection_to_clipboard
-URxvt.iso14755: false
-URxvt.iso14755_52: false

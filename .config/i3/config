@@ -38,8 +38,7 @@ bindsym $mod+Shift+q kill
 # start program launcher
 bindsym $mod+d exec rofi -show run
 
-# launch categorized menu
-bindsym $mod+z exec --no-startup-id morc_menu
+
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -312,13 +311,15 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
+set $bclr #9C9C9C
+
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #30343F #30343F #FFFFFF #30343F #A9D4C7
-  client.focused_inactive #30343F #30343F #FFFFFF #30343F #A9D4C7
-  client.unfocused        #30343F #30343F #FFFFFF #30343F #A9D4C7
-  client.urgent           #30343F #30343F #FFFFFF #30343F #A9D4C7
-  client.placeholder      #30343F #0c0c0c #FFFFFF #30343F #A9D4C7
+  client.focused          #30343F #30343F #FFFFFF #30343F $bclr
+  client.focused_inactive #30343F #30343F #FFFFFF #30343F $bclr
+  client.unfocused        #30343F #30343F #FFFFFF #30343F $bclr
+  client.urgent           #30343F #30343F #FFFFFF #30343F $bclr
+  client.placeholder      #30343F #0c0c0c #FFFFFF #30343F $bclr
 
   client.background       #30343F
 
@@ -377,10 +378,13 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-#Personal
-       assign [class="konsole"]   $ws3
-       assign [class="Firefox"] $ws2
-       assign [class="discord"] $ws1
+# Assign apps to it workspace
+        assign [class="urxvt"] $ws3
+        assign [class="Firefox"] $ws2
+        assign [class="discord"] $ws1
+        assign [class="multimc"] $ws3
+
+
 
 ## Screenshots
 #bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"

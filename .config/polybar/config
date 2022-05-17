@@ -4,8 +4,8 @@ background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
-primary = #FFF
-secondary = #B2535B
+primary = #dfc39d
+secondary = #094c93
 alert = #B2535B
 
 ;------------;
@@ -43,18 +43,18 @@ bottom = false
 ; FONTS ;
 ;-------;
 
-font-0 = "scientifica:style=Regular:size=11:antialias=true;3"
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=8;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;3"
-font-3 = "Font Awesome 5 Brands:pixelsize=8;3"
+font-0 = "NEXT ART_BOLD:style=Regular:size=12:antialias=true;5"
+font-1 = "Font Awesome 6 Free:style=Solid:pixelsize=11;4"
+font-2 = "Font Awesome 6 Free:style=Regular:pixelsize=11;4"
+font-3 = "Font Awesome 6 Brands:pixelsize=8;3"
 
 ;--------;
 ; COLORS ;
 ;--------;
 
-background = #aa9D8FB8
+background = #aa343434
 background-alt = #555
-foreground = #F69F99
+foreground = #0c73b2
 foreground-alt = #555
 primary = #E1D4AE
 secondary = #B6C5DB
@@ -130,17 +130,17 @@ bottom = true
 ; FONTS ;
 ;-------;
 
-font-0 = QUICKENS:style=Regular:size=11:antialias=true;3
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=11;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=11;3"
-font-3 = "Font Awesome 5 Brands:pixelsize=11;3"
+font-0 = CaviarDreams:style=Regular:size=14:antialias=true;3
+font-1 = "Font Awesome 6 Free:style=Solid:pixelsize=11;3"
+font-2 = "Font Awesome 6 Free:style=Regular:pixelsize=11;3"
+font-3 = "Font Awesome 6 Brands:pixelsize=11;3"
 font-4 = "Scientifica:size=11;3"
 
 ;--------;
 ; COLORS ;
 ;--------;
 
-background = #aa9D8FB8
+background = #aa343434
 background-alt = #aa555
 foreground = #dfdfdf
 foreground-alt = #555
@@ -348,7 +348,7 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = "%Y/%m/%d"
+date = " %Y/%m/%d"
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
@@ -464,7 +464,7 @@ format-spacing = 1
 
 label-open = " Power "
 label-open-foreground = ${colors.primary}
-label-close = " X Cancel "
+label-close = " Cancel "
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.primary}

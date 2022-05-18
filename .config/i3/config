@@ -11,9 +11,9 @@ set $mod Mod4
 new_window pixel 1
 new_float normal
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always $HOME/.config/polybar/launch.sh
 exec_always pkill dunst | dunst -conf $HOME/.config/dunst/dunstrc
-
+exec_always $HOME/.config/picom/launch.sh
 # Hide borders
 hide_edge_borders smart
 
@@ -313,6 +313,7 @@ set $bclr #2e3440
 #############################
 
 # Set inner/outer gaps
+exec i3-msg gaps top all set 45
 gaps inner 12
 gaps outer 0
 
@@ -389,6 +390,4 @@ bindsym $mod+Shift+o exec --no-startup-id obs
 
 # Autostart
 exec --no-startup-id ibus-daemon --xim -d -r
-exec --no-startup-id i3-msg 'workspace 1:Discord; exec /usr/bin/discord'
-exec_always wal -i $HOME/Pictures/Wal/bg2.png -c
-exec_always --no-startup-id $HOME/.config/picom/launch.sh
+exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/discord'

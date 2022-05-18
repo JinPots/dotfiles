@@ -54,7 +54,7 @@ font-3 = "Font Awesome 6 Brands:pixelsize=8;3"
 
 background = #aa343434
 background-alt = #555
-foreground = #0c73b2
+foreground = #dfdfdf
 foreground-alt = #555
 primary = #E1D4AE
 secondary = #B6C5DB
@@ -66,15 +66,15 @@ alert = #B2535B
 
 radius = 8px
 fixed-center = true
-padding-left = 0
+padding-left = 2
 padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 2
 
-modules-left = powermenu pulseaudio backlight-acpi
-modules-center = xwindow date
-modules-right = filesystem eth battery
+modules-left = pulseaudio backlight-acpi mpd
+modules-center = date
+modules-right = network battery
 
 tray-position = hidden
 tray-padding =2 
@@ -133,8 +133,9 @@ bottom = true
 font-0 = CaviarDreams:style=Regular:size=14:antialias=true;3
 font-1 = "Font Awesome 6 Free:style=Solid:pixelsize=11;3"
 font-2 = "Font Awesome 6 Free:style=Regular:pixelsize=11;3"
-font-3 = "Font Awesome 6 Brands:pixelsize=11;3"
-font-4 = "Scientifica:size=11;3"
+font-3 = "Font Awesome 6 Brands:pixelsize=20;3"
+font-4 = "NEXT ART:style=Regular:size=11:antialias=true;3"
+
 
 ;--------;
 ; COLORS ;
@@ -160,8 +161,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-modules-left = i3 
-modules-right =  memory cpu temperature 
+modules-left = i3
+modules-center = polywins
+modules-right = memory cpu temperature 
 
 ;---------;
 ; MODULES ;
@@ -173,6 +175,8 @@ format-foreground = ${colors.primary}
 label = %title%
 label-maxlen = 80
 
+label-empty = No window focused
+
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
@@ -181,13 +185,24 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
 
-label-layout = %layout%
+label-layout = %variant%
 label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
+
+[module/polywins]
+type = custom/script
+exec = ~/.config/polybar/polywins.sh
+format = <label>
+label = %output%
+format-padding=0
+tail = true
+label-background = ${colors.bgsolid} 
+label-font = 4
+
 
 [module/filesystem]
 type = internal/fs
@@ -204,9 +219,11 @@ label-unmounted-foreground = ${colors.primary}
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = false
-wrapping-scroll = false
+wrapping-scroll = true
+strip-wsnumbers = true
+show-urgent = true
 
-ws-icon-0 = 1;
+ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
@@ -219,7 +236,7 @@ ws-icon-default = 
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
-
+label-mode = %mode%
 label-mode-padding = 2
 label-mode-foreground = #000000
 label-mode-background = ${colors.primary}
@@ -267,20 +284,10 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
+format = <label>
 label =  %percentage%%
 label-foreground = ${colors.primary}
 
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = ${colors.primary}
-bar-indicator-font = 
-bar-fill = ─
-bar-fill-font = 4
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 4
-bar-empty-foreground = ${colors.foreground-alt}
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -328,28 +335,12 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.primary}
 
-[module/eth]
-type = internal/network
-interface = enp0s20f0u4u4c2
-interval = 3.0
-
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
-date = " %Y/%m/%d"
-date-alt = " %Y-%m-%d"
+date = " %m/%d"
+date-alt = " %Y / %m / %d"
 
 time = %H:%M
 time-alt = %H:%M:%S
@@ -364,35 +355,19 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
 format-volume-foreground = ${colors.primary}
-label-volume = %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${colors.primary}
 
-label-muted = Muted`
+label-muted = 
 label-muted-foreground = ${colors.secondary}
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #B2535B
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 4
-bar-volume-fill = ─
-bar-volume-fill-font = 4
-bar-volume-empty = ─
-bar-volume-empty-font = 4
-bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/alsa]
 type = internal/alsa
 
-format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
 label-volume = VOL
 label-volume-foreground = ${root.foreground}
 
@@ -400,22 +375,6 @@ format-muted-prefix = ""
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = Sound Muted
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
@@ -484,6 +443,17 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
+[module/network]
+type = internal/network
+interface = enp0s20f0u4u4c2
+interface-type = wired
+interval = 1
+format = <label>
+unknown-as-up = true
+format-connected = <label-connected>
+label-connected = %upspeed% | %downspeed%
+
+
 [settings]
 screenchange-reload = true
 ;compositing-background = xor
@@ -492,7 +462,7 @@ screenchange-reload = true
 ;compositing-border = over
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 1
+margin-bottom = 1
 
 ; vim:ft=dosini

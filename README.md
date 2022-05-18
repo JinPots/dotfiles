@@ -17,5 +17,6 @@
     <li>File manager: Ranger</li>
     <li>Process Manager: htop/btop</li>
     <li>Compositor: Picom</li>
+    <li>Sound visualizer: Cava</li>
 </ul>
 </div>

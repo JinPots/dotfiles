@@ -1,7 +1,7 @@
 <div align="center">
 <h1>.dotfiles</h3>
 
-<img src="https://github.com/JinPots/dotfiles/blob/master/Pictures/screenshot.png?raw=true">
+<img src="https://github.com/JinPots/dotfiles/blob/master/Pictures/screenshot2.png?raw=true">
 
 `Arch` `i3-gaps` `polybar`
 </div>

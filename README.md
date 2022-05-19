@@ -1,7 +1,7 @@
 <div align="center">
 <h1>.dotfiles</h3>
 
-<img src="https://github.com/JinPots/dotfiles/blob/master/Pictures/screenshot.png?raw=true">
+<img src="https://github.com/JinPots/dotfiles/blob/master/Pictures/screenshot3.png?raw=true">
 
 `Arch` `i3-gaps` `polybar`
 </div>
@@ -15,7 +15,6 @@
     <li>Bar: Polybar</li>
     <li>Fonts: Next Art (Top bar), Caviar Dreams (Bottom bar), Font Awesome 6 (Icons)</li>
     <li>File manager: Ranger</li>
-    <li>Process Manager: htop/btop</li>
     <li>Compositor: Picom</li>
     <li>Sound visualizer: Cava</li>
 </ul>

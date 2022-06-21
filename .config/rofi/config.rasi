@@ -1,0 +1,14 @@
+/* Rofi config file */
+configuration {
+    font: "Source Sans Pro 12";
+    show-icons: true;
+    display-window: "Window";
+    display-drun: "Search";
+}
+
+//@theme "launcher"
+
+listview {
+    lines: 12;
+}@theme "/usr/share/rofi/themes/sidebar.rasi"
+@theme "/home/jinpots/.config/rofi/themes/launcher.rasi"

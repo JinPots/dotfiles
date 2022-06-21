@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+pulseaudio --start
+sleep 2
+pulseaudio --kill
+sleep 2
+pulseaudio --start

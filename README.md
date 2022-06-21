@@ -13,7 +13,6 @@
     <li>Terminal: URxvt (rxvt-unicode)</li>
     <li>Shell: zsh</li>
     <li>Bar: Polybar</li>
-    <li>Fonts: Next Art (Top bar), Caviar Dreams (Bottom bar), Font Awesome 6 (Icons)</li>
     <li>File manager: Ranger</li>
     <li>Compositor: Picom</li>
     <li>Sound visualizer: Cava</li>
